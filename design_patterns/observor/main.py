@@ -1,18 +1,23 @@
-from abc import ABC
+from abc import ABC, abstractstaticmethod
 
 
 class IObserver(ABC):
+
+    @abstractstaticmethod
     def update(self):
         pass
 
 
 class IObservable(ABC):
+    @abstractstaticmethod
     def add(self, observer: IObserver):
         pass
 
+    @abstractstaticmethod
     def remove(self, observer: IObserver):
         pass
 
+    @abstractstaticmethod
     def notify(self):
         pass
 
@@ -72,6 +77,13 @@ class RSSServer(IObservable):
 
     def add(self, observer: IObserver):
         self.clients.append(observer)
+
+    def remove(self, observer: IObserver):
+        if observer in self.clients:
+            self.clients.remove(observer)
+            return True
+
+        return False
 
     def new_feed(self, msg):
         self.feeds.append(msg)
