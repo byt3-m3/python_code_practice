@@ -97,9 +97,8 @@ if __name__ == "__main__":
             print(f"Opening {FILE_NAME}")
             reader = csv.reader(file)
 
-            for host in reader:
-                if host:
-                    q.put(host[0])
+            for row in reader:
+                q.put(row[0])
 
             q.join()
             file.close()
