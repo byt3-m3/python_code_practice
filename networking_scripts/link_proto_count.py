@@ -1,7 +1,6 @@
 from netmiko import ConnectHandler
 import re
 from rich.console import Console
-from rich.table import Table
 import threading, queue
 import csv
 from netmiko import NetmikoAuthenticationException, NetmikoTimeoutException
@@ -11,8 +10,12 @@ import argparse
 This Script  reads from the specified csv file and executes a log parse function. 
 
 This script utilizes threading and will consistently read the csv file and preform the worker action.
+####
+SETUP 
 
+pip install rich, netmiko 
 
+#####
 usage: link_proto_count.py [-h] [--parse PARSE]
 
 Cisco Log Parser
@@ -30,10 +33,6 @@ Link flaps detected: 6 - Protocol flaps detected: 8
 
 
 def get_logs(host):
-    table = Table(title="Link/Proto Updown")
-    table.add_column("Protocol Flaps", justify="center", style="cyan", no_wrap=True)
-    table.add_column("Line Flaps", justify="center", style="cyan", no_wrap=True)
-
     console = Console()
 
     cisco1 = {
