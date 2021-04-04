@@ -76,3 +76,4 @@ venv.bak/
 __pycache__/*
 *.pyc
 .idea/*
+secret.py
