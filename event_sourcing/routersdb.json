@@ -1,0 +1,22 @@
+[
+  {
+    "hostname": "R1-CHANGED",
+    "status": "up"
+  },
+  {
+    "hostname": "R2",
+    "status": "maintenance"
+  },
+  {
+    "hostname": "R3-CHANGED",
+    "status": "up"
+  },
+  {
+    "hostname": "R4",
+    "status": "decommed"
+  },
+  {
+    "hostname": "R6",
+    "status": "down"
+  }
+]

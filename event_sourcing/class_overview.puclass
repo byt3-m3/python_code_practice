@@ -1,0 +1,61 @@
+@startuml
+abstract Event {
+    id: str
+    type: str
+    namespace: Namespace
+    created: int
+
+}
+Event <|-- CreateRouterEvent
+Event <|-- DeleteRouterEvent
+Event <|-- ChangeRouterStatusEvent
+Event <|-- ChangeRouterHostnameEvent
+Event <|-- DecommRouterEvent
+Event <|-- SetRouterMaintenanceEvent
+class CreateRouterEvent{
+    type="router::create"
+}
+class DeleteRouterEvent{
+    type="router::delete"
+}
+
+class ChangeRouterStatusEvent{
+    type="router:change_status"
+}
+
+class ChangeRouterHostnameEvent{
+    type="router::change_hostname"
+}
+
+class DecommRouterEvent{
+    type="router::decommission"
+}
+
+class SetRouterMaintenanceEvent{
+    type="router::set_mainetance_mode"
+}
+
+class RouterEventHandler {
+    event_history: List[Event]
+    dao: *RouterDAO
+    last_event: Event
+    process_event(event: Event): None
+    process(): None
+
+}
+RouterEventHandler::events "1"--* "0..*" Event
+RouterEventHandler::dao "1" --o "1"  RouterDAO
+
+class RouterDAO {
+    routers: List[Router]
+    add_router(r: Router): None
+    get_router_by_hostname(hostname: str): Router
+    delete_router(hostname: str): None
+}
+RouterDAO::routers "1" -o "0..*" Router
+class Router {
+    hostname: str
+    status: str
+}
+
+@enduml

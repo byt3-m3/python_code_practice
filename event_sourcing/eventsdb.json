@@ -1,0 +1,135 @@
+[
+  {
+    "id": "ac19025d-e28d-4f73-b622-a5f48edea2d5",
+    "type": "router::create",
+    "created": 1629062302.413137,
+    "namespace": {
+      "hostname": "R1",
+      "status": "init"
+    }
+  },
+  {
+    "id": "c109deaf-bd7d-4f42-a4f9-b4200d08cc99",
+    "type": "router::create",
+    "created": 1629062302.413137,
+    "namespace": {
+      "hostname": "R2",
+      "status": "down"
+    }
+  },
+  {
+    "id": "2b037323-ddbf-45b4-bb60-dfd1bba1be3e",
+    "type": "router::create",
+    "created": 1629062302.413137,
+    "namespace": {
+      "hostname": "R3",
+      "status": "down"
+    }
+  },
+  {
+    "id": "1f927cfe-3de8-4856-ac20-4a2fa613771e",
+    "type": "router::create",
+    "created": 1629062302.413137,
+    "namespace": {
+      "hostname": "R4",
+      "status": "down"
+    }
+  },
+  {
+    "id": "062d0a57-ba83-407b-8a68-c62dfa7db034",
+    "type": "router::create",
+    "created": 1629062302.413137,
+    "namespace": {
+      "hostname": "R5",
+      "status": "down"
+    }
+  },
+  {
+    "id": "de74cd41-fe33-4ee7-9da6-8b73f1d92c4a",
+    "type": "router::create",
+    "created": 1629062302.413137,
+    "namespace": {
+      "hostname": "R6",
+      "status": "down"
+    }
+  },
+  {
+    "id": "ae348946-9ed3-4acf-b274-9979f8366836",
+    "type": "router:change_status",
+    "created": 1629062302.413137,
+    "namespace": {
+      "hostname": "R4",
+      "status": "down"
+    }
+  },
+  {
+    "id": "0be39bc2-b073-496a-bc0b-b715f73990f2",
+    "type": "router::change_hostname",
+    "created": 1629062302.413137,
+    "namespace": {
+      "hostname": "R1",
+      "new_val": "R1-CHANGED"
+    }
+  },
+  {
+    "id": "0328d1a4-3a03-490f-b8b4-b0b14787dc97",
+    "type": "router:change_status",
+    "created": 1629062302.413137,
+    "namespace": {
+      "hostname": "R1-CHANGED",
+      "status": "up"
+    }
+  },
+  {
+    "id": "c5a355b4-3815-4918-8b6f-fc6f10179986",
+    "type": "router:change_status",
+    "created": 1629062302.413137,
+    "namespace": {
+      "hostname": "R2",
+      "status": "up"
+    }
+  },
+  {
+    "id": "2e36e8e0-c329-47c3-93e7-09c87ebf7ff1",
+    "type": "router:change_status",
+    "created": 1629062302.413137,
+    "namespace": {
+      "hostname": "R3",
+      "status": "up"
+    }
+  },
+  {
+    "id": "e3caf59a-a82d-44be-bc6a-bc13e9c5c55e",
+    "type": "router:change_status",
+    "created": 1629062302.413137,
+    "namespace": {
+      "hostname": "R4",
+      "status": "up"
+    }
+  },
+  {
+    "id": "d0755e24-8d3d-44f9-89e3-bab68a748147",
+    "type": "router::change_hostname",
+    "created": 1629062302.447108,
+    "namespace": {
+      "hostname": "R3",
+      "new_val": "R3-CHANGED"
+    }
+  },
+  {
+    "id": "add146b1-44b2-4aaa-9204-2e6ef96d06b0",
+    "type": "router::set_mainetance_mode",
+    "created": 1629062302.449108,
+    "namespace": {
+      "hostname": "R2"
+    }
+  },
+  {
+    "id": "344f8fa6-7ae3-4cb0-9af7-4a3493b38d5d",
+    "type": "router::decommission",
+    "created": 1629062302.451108,
+    "namespace": {
+      "hostname": "R4"
+    }
+  }
+]
