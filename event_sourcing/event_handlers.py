@@ -51,7 +51,7 @@ class RouterDAO:
             file.write(json_data)
 
 
-class RouterEventHandler:
+class RouterEventProcessor:
 
     def __init__(self, dao: RouterDAO, events: list):
         self._events = events
@@ -181,7 +181,7 @@ def main():
 
     ]
 
-    event_handler = RouterEventHandler(dao=RouterDAO(), events=events)
+    event_handler = RouterEventProcessor(dao=RouterDAO(), events=events)
     event_handler.process()
     event_handler.process_event(ChangeRouterHostnameEvent(hostname="R3", new_val="R3-CHANGED"))
     event_handler.process_event(SetRouterMaintenanceEvent(hostname="R2"))
